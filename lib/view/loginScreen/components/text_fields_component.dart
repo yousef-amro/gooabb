@@ -18,21 +18,19 @@ class _TextFieldsComponentState extends State<TextFieldsComponent> {
     return Padding(
       padding: const EdgeInsets.all(20.0),
       child: Stack(
-        alignment: Alignment.center, // ✅ ده المفتاح
+        alignment: Alignment.center,
         children: [
           Stack(
             alignment: Alignment.center,
             children: [
-              Container(
-                color: Color(0xffFFD600),
-                height: 300,
-                width: double.infinity,
-              ),
               Padding(
                 padding: const EdgeInsets.all(1.0),
                 child: Container(
-                  color: Color(0xff1E1E1E),
-                  height: 295,
+                  decoration: BoxDecoration(
+                    color: const Color.fromARGB(255, 40, 40, 40),
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  height: 450,
                   width: double.infinity,
                 ),
               ),
@@ -41,11 +39,20 @@ class _TextFieldsComponentState extends State<TextFieldsComponent> {
           ),
           Column(
             children: [
+              Text(
+                'تسجيل دخول',
+                style: TextStyle(
+                  color: AppColors.white,
+                  fontSize: 25,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              SizedBox(height: 30),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Text(
-                    ':البريد الالكتروني',
+                    'البريد الالكتروني',
                     style: TextStyle(
                       color: AppColors.white,
                       fontWeight: FontWeight.bold,
@@ -57,12 +64,12 @@ class _TextFieldsComponentState extends State<TextFieldsComponent> {
               ),
               SizedBox(height: 10),
               LoginEmail(),
-              SizedBox(height: 10),
+              SizedBox(height: 15),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Text(
-                    ':كلمة المرور',
+                    'كلمة المرور',
                     style: TextStyle(
                       color: AppColors.white,
                       fontWeight: FontWeight.bold,
@@ -74,7 +81,29 @@ class _TextFieldsComponentState extends State<TextFieldsComponent> {
               ),
               SizedBox(height: 10),
               LoginPassword(),
-              SizedBox(height: 10),
+              SizedBox(height: 30),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        print('yoyo');
+                      });
+                    },
+                    child: Text(
+                      'هل نسيت كلمة المرور؟',
+                      style: TextStyle(
+                        color: AppColors.gooabbYellow,
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  SizedBox(width: 25),
+                ],
+              ),
+              SizedBox(height: 25),
               LoginButton(),
             ],
           ),

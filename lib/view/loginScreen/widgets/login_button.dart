@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gooabb/core/constants/colorsConstants.dart';
 
 class LoginButton extends StatelessWidget {
   const LoginButton({super.key});
@@ -6,10 +7,13 @@ class LoginButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 110, right: 110),
+      padding: const EdgeInsets.only(left: 20, right: 20),
       child: Container(
+        decoration: BoxDecoration(
+          color: AppColors.gooabbYellow,
+          borderRadius: BorderRadius.circular(19),
+        ),
         child: RawMaterialButton(
-          fillColor: Color(0xffFFD600),
           shape: RoundedRectangleBorder(),
           elevation: 0,
           onPressed: () {},

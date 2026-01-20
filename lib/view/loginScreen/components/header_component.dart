@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:gooabb/core/constants/colorsConstants.dart';
 import 'package:gooabb/core/constants/imagesConstants.dart';
 
 class HeaderComponent extends StatefulWidget {
@@ -12,19 +11,6 @@ class HeaderComponent extends StatefulWidget {
 class _HeaderComponentState extends State<HeaderComponent> {
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Image.asset(assets.logo),
-        const SizedBox(height: 25),
-        Text(
-          'تسجيل دخول',
-          style: TextStyle(
-            color: AppColors.white,
-            fontSize: 25,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-      ],
-    );
+    return Column(children: [Image.asset(assets.logo)]);
   }
 }

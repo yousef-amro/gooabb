@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:gooabb/core/constants/colorsConstants.dart';
 import 'package:gooabb/view/loginScreen/components/header_component.dart';
+import 'package:gooabb/view/loginScreen/components/new_account_component.dart';
 import 'package:gooabb/view/loginScreen/components/text_fields_component.dart';
-import 'package:gooabb/view/loginScreen/widgets/login_email.dart';
-import 'package:gooabb/view/loginScreen/widgets/login_password.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -25,8 +24,10 @@ class _LoginScreenState extends State<LoginScreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 HeaderComponent(),
-                SizedBox(height: 25),
+                const SizedBox(height: 20),
                 TextFieldsComponent(),
+                const SizedBox(height: 10),
+                NewAccountComponent(),
               ],
             ),
           ),
