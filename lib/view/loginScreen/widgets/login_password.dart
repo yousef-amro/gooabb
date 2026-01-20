@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:gooabb/core/constants/colorsConstants.dart';
 import 'package:gooabb/core/constants/validatesConstants.dart';
 
-class LoginEmail extends StatelessWidget {
-  const LoginEmail({super.key});
+class LoginPassword extends StatelessWidget {
+  const LoginPassword({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +29,7 @@ class LoginEmail extends StatelessWidget {
             padding: const EdgeInsets.all(8.0),
             child: TextFormField(
               textAlign: TextAlign.center,
-              keyboardType: TextInputType.emailAddress,
+              obscureText: true,
 
               validator: (value) {
                 if (value!.isEmpty) {
@@ -53,7 +53,7 @@ class LoginEmail extends StatelessWidget {
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.zero,
                 ),
-                hintText: 'user@example.com',
+                hintText: 'Your Password',
                 hintStyle: TextStyle(
                   color: AppColors.hintText,
                   fontWeight: FontWeight.bold,
