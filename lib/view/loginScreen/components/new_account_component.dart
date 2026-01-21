@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:gooabb/core/constants/colorsConstants.dart';
 import 'package:gooabb/view/loginScreen/widgets/support_button.dart';
 import 'package:gooabb/view/registerScreen/view.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class NewAccountComponent extends StatefulWidget {
   const NewAccountComponent({super.key});
@@ -49,7 +48,7 @@ class _NewAccountComponentState extends State<NewAccountComponent> {
         ),
         SizedBox(height: 10),
         GestureDetector(
-          onTap: openSupportEmail,
+          onTap: () => openSupportEmail(context),
           child: Text(
             'التواصل مع الدعم؟',
             style: TextStyle(
