@@ -4,10 +4,10 @@ import 'package:flutter/material.dart';
 class LoginModel {
   final GlobalKey<FormState> formField = GlobalKey<FormState>();
   final TextEditingController emailController = TextEditingController(
-    text: kDebugMode ? "yoyo2007pc@gmail.com" : "",
+    text: kDebugMode ? "amrelswaf48118@gmail.com" : "",
   );
   final TextEditingController passController = TextEditingController(
-    text: kDebugMode ? "12341234" : "",
+    text: kDebugMode ? "Amr44wr2*" : "",
   );
 
   LoginModel();
