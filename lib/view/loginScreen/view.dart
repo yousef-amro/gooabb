@@ -27,7 +27,7 @@ class _LoginScreenState extends State<LoginScreen> {
           child: Center(
             child: SingleChildScrollView(
               child: Form(
-                key: LoginModel().formField,
+                key: loginCubit.loginModel.formField,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [

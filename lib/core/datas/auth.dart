@@ -1,7 +1,8 @@
+import 'package:gooabb/core/model/user_model.dart';
 import 'package:gooabb/core/network_utils/network_utils.dart';
 
 class AuthDataSource {
-  void login({
+  static Future<UserModel> login({
     required String email,
     required String password,
   }) async {
@@ -13,7 +14,6 @@ class AuthDataSource {
         "session_length": "long",
       },
     );
-
-    print(result.data);
+    return UserModel.fromGooabbLogin(result as Map<String, dynamic>);
   }
 }

@@ -24,6 +24,7 @@ class LoginEmail extends StatelessWidget {
           if (!emailValid) {
             return "Enter Valid Email";
           }
+
           return null;
         },
 

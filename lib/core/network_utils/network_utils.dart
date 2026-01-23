@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 
 class NetworkUtils {
-  //https://pma.gooabb.com/
+  //https://pma.gooabb.com/nourapi/v1/
   static const String baseUrl = 'https://pma.gooabb.com/nourapi/v1/';
   static Dio? _dio;
 
