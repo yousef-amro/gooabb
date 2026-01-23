@@ -1,7 +1,4 @@
-import 'dart:convert';
-
 import 'package:dio/dio.dart';
-import 'package:flutter/material.dart';
 
 class NetworkUtils {
   //https://pma.gooabb.com/
@@ -14,22 +11,13 @@ class NetworkUtils {
       ..options.validateStatus = (status) => true;
   }
 
-  static Future<Response> post(
-    String s, {
-    required String email,
-    required String password,
-    required FormData formData,
+  static Future<Response> post({
+    required String endpoint,
+    required Map<String, dynamic> data,
   }) {
     return NetworkUtils._dio!.post(
       '',
-      data: FormData.fromMap({
-        'req': 'GOOABB LOGIN',
-        'data': jsonEncode({
-          'email': email,
-          'password': password,
-          'session_length': 'long',
-        }),
-      }),
+      data: FormData.fromMap({"req": endpoint, ...data}),
     );
   }
 }
