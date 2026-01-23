@@ -14,6 +14,6 @@ class AuthDataSource {
         "session_length": "long",
       },
     );
-    return UserModel.fromGooabbLogin(result as Map<String, dynamic>);
+    return UserModel.fromGooabbLogin(Map.from(result.data));
   }
 }

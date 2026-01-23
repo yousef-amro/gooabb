@@ -26,7 +26,8 @@ class LoginCubit extends Cubit<LoginState> {
         //   MaterialPageRoute(builder: (_) => const AppScreen()),
         //   (route) => false, // remove everything
         // );
-      } catch (e) {
+      } catch (e, s) {
+        print("e :$e, s$s");
         emit(LoginError(e.toString()));
         print(e.toString());
       }

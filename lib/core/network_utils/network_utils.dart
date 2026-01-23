@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:dio/dio.dart';
 
 class NetworkUtils {
@@ -17,7 +19,10 @@ class NetworkUtils {
   }) {
     return NetworkUtils._dio!.post(
       '',
-      data: FormData.fromMap({"req": endpoint, ...data}),
+      data: FormData.fromMap({
+        "req": endpoint,
+        "data": jsonEncode(data),
+      }),
     );
   }
 }

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:gooabb/core/network_utils/network_utils.dart';
 import 'package:gooabb/view/splashScreen/view.dart';
 
-void main() {
+void main() async {
+  await NetworkUtils.init();
   runApp(MyApp());
 }
 

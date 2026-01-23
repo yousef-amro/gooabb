@@ -11,6 +11,7 @@ class UserModel {
 
   /// Gooabb Login
   factory UserModel.fromGooabbLogin(Map<String, dynamic> json) {
+    print(json);
     return UserModel(
       id: (json['id'] ?? json['user_id'] as num).toInt(),
       authToken: json['token']?.toString(),
