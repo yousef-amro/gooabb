@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gooabb/core/constants/colorsConstants.dart';
+import 'package:gooabb/core/constants/colors_constants.dart';
 import 'package:gooabb/view/loginScreen/widgets/login_button.dart';
 import 'package:gooabb/view/loginScreen/widgets/login_email.dart';
 import 'package:gooabb/view/loginScreen/widgets/login_password.dart';

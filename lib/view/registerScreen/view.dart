@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:gooabb/core/constants/colorsConstants.dart';
+import 'package:gooabb/core/constants/colors_constants.dart';
 import 'package:gooabb/view/loginScreen/components/header_component.dart';
 import 'package:gooabb/view/registerScreen/components/text_fields_component.dart';
 import 'package:gooabb/view/registerScreen/controller/register_cubit.dart';
@@ -13,9 +13,10 @@ class RegisterScreen extends StatefulWidget {
 }
 
 class _RegisterScreenState extends State<RegisterScreen> {
+  RegisterCubit registerCubit = RegisterCubit();
+
   @override
   Widget build(BuildContext context) {
-    RegisterCubit registerCubit = RegisterCubit();
     return BlocProvider(
       create: (context) => registerCubit,
       child: Scaffold(

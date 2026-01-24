@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:gooabb/core/constants/colorsConstants.dart';
+import 'package:gooabb/core/constants/colors_constants.dart';
 import 'package:gooabb/view/registerScreen/controller/register_cubit.dart';
 
 class RegisterPassword extends StatelessWidget {

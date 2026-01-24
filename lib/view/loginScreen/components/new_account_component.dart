@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gooabb/core/constants/colorsConstants.dart';
+import 'package:gooabb/core/constants/colors_constants.dart';
 import 'package:gooabb/view/loginScreen/widgets/support_button.dart';
 import 'package:gooabb/view/registerScreen/view.dart';
 
@@ -23,11 +23,12 @@ class _NewAccountComponentState extends State<NewAccountComponent> {
             GestureDetector(
               onTap: () {
                 setState(() {
-                  Navigator.push(
+                  Navigator.pushAndRemoveUntil(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => RegisterScreen(),
+                      builder: (_) => const RegisterScreen(),
                     ),
+                    (route) => false, // remove everything
                   );
                 });
               },

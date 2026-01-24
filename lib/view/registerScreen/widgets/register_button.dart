@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gooabb/core/constants/colors_constants.dart';
-import 'package:gooabb/view/loginScreen/controller/login_cubit.dart';
+import 'package:gooabb/view/registerScreen/controller/register_cubit.dart';
 
-class LoginButton extends StatelessWidget {
-  const LoginButton({super.key});
+class RegisterButton extends StatelessWidget {
+  const RegisterButton({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final LoginCubit loginCubit = context.read<LoginCubit>();
+    final RegisterCubit registerCubit = context.read<RegisterCubit>();
     return Padding(
       padding: const EdgeInsets.only(left: 20, right: 20),
       child: Container(
@@ -20,7 +20,7 @@ class LoginButton extends StatelessWidget {
           shape: RoundedRectangleBorder(),
           elevation: 0,
           onPressed: () {
-            loginCubit.login(context);
+            registerCubit.register(context);
           },
           child: SizedBox(
             width: double.infinity,

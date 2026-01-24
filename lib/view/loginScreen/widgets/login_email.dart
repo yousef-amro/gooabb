@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:gooabb/core/constants/colorsConstants.dart';
-import 'package:gooabb/core/constants/validatesConstants.dart';
+import 'package:gooabb/core/constants/colors_constants.dart';
+import 'package:gooabb/core/constants/validates_constants.dart';
 import 'package:gooabb/view/loginScreen/controller/login_cubit.dart';
 
 class LoginEmail extends StatelessWidget {

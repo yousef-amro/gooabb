@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gooabb/core/constants/imagesConstants.dart';
+import 'package:gooabb/core/constants/images_constants.dart';
 
 class HeaderComponent extends StatefulWidget {
   const HeaderComponent({super.key});

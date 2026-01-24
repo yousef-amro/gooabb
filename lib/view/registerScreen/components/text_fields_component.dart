@@ -1,8 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:gooabb/core/constants/colorsConstants.dart';
+import 'package:gooabb/core/constants/colors_constants.dart';
+import 'package:gooabb/view/loginScreen/view.dart';
 import 'package:gooabb/view/registerScreen/widgets/age.dart';
 import 'package:gooabb/view/registerScreen/widgets/first_name.dart';
+import 'package:gooabb/view/registerScreen/widgets/register_button.dart';
 import 'package:gooabb/view/registerScreen/widgets/register_email.dart';
 import 'package:gooabb/view/registerScreen/widgets/register_password.dart';
 import 'package:gooabb/view/registerScreen/widgets/second_name.dart';
@@ -17,8 +18,6 @@ class RegisterTextFieldsComponent extends StatefulWidget {
 
 class _RegisterTextFieldsComponentState
     extends State<RegisterTextFieldsComponent> {
-  DateTime _selected = DateTime(2000, 1, 1);
-
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -40,7 +39,6 @@ class _RegisterTextFieldsComponentState
                   width: double.infinity,
                 ),
               ),
-              Padding(padding: const EdgeInsets.all(8.0)),
             ],
           ),
           Column(
@@ -151,16 +149,20 @@ class _RegisterTextFieldsComponentState
 
               SizedBox(height: 30),
               Row(
-                mainAxisAlignment: MainAxisAlignment.end,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   GestureDetector(
                     onTap: () {
-                      setState(() {
-                        print('yoyo');
-                      });
+                      Navigator.pushAndRemoveUntil(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => const LoginScreen(),
+                        ),
+                        (route) => false, // remove everything
+                      );
                     },
                     child: Text(
-                      'هل نسيت كلمة المرور؟',
+                      'تسجيل دخول ',
                       style: TextStyle(
                         color: AppColors.gooabbYellow,
                         fontSize: 16,
@@ -168,11 +170,17 @@ class _RegisterTextFieldsComponentState
                       ),
                     ),
                   ),
-                  SizedBox(width: 25),
+                  Text(
+                    'لديك حساب بالفعل؟',
+                    style: TextStyle(
+                      color: AppColors.white,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                 ],
               ),
               SizedBox(height: 25),
-              RegisterFirstName(),
+              RegisterButton(),
             ],
           ),
         ],

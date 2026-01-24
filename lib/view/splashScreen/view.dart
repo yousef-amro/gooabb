@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:gooabb/core/constants/colorsConstants.dart';
-import 'package:gooabb/core/constants/imagesConstants.dart';
+import 'package:gooabb/core/constants/colors_constants.dart';
+import 'package:gooabb/core/constants/images_constants.dart';
 import 'package:gooabb/view/loginScreen/view.dart';
 
 class SplashScreen extends StatefulWidget {

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:gooabb/core/constants/colorsConstants.dart';
-import 'package:gooabb/core/model/login_model.dart';
+import 'package:gooabb/core/constants/colors_constants.dart';
 import 'package:gooabb/view/loginScreen/components/header_component.dart';
 import 'package:gooabb/view/loginScreen/components/new_account_component.dart';
 import 'package:gooabb/view/loginScreen/components/text_fields_component.dart';

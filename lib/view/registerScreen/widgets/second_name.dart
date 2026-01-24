@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:gooabb/core/constants/colorsConstants.dart';
-import 'package:gooabb/core/constants/validatesConstants.dart';
+
 import 'package:gooabb/view/registerScreen/controller/register_cubit.dart';
 
 class RegisterSecondName extends StatelessWidget {
@@ -25,7 +24,6 @@ class RegisterSecondName extends StatelessWidget {
 
         decoration: InputDecoration(
           errorBorder: InputBorder.none,
-          focusedErrorBorder: InputBorder.none,
 
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(19),
