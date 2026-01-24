@@ -1,5 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gooabb/core/constants/colorsConstants.dart';
+import 'package:gooabb/view/registerScreen/widgets/age.dart';
 import 'package:gooabb/view/registerScreen/widgets/first_name.dart';
 import 'package:gooabb/view/registerScreen/widgets/register_email.dart';
 import 'package:gooabb/view/registerScreen/widgets/register_password.dart';
@@ -15,6 +17,8 @@ class RegisterTextFieldsComponent extends StatefulWidget {
 
 class _RegisterTextFieldsComponentState
     extends State<RegisterTextFieldsComponent> {
+  DateTime _selected = DateTime(2000, 1, 1);
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -99,7 +103,17 @@ class _RegisterTextFieldsComponentState
                 ],
               ),
               SizedBox(height: 10),
-              RegisterFirstName(),
+              DatePickerTextField(
+                labelText: 'Birthday',
+                hintText: 'DD/MM/YYYY',
+                minYear: 1950,
+                maxYear: DateTime.now().year,
+                onChanged: (date) {
+                  // Save date
+                  print(date);
+                },
+              ),
+
               SizedBox(height: 15),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,

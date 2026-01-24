@@ -38,6 +38,8 @@ dependencies:
   bloc: ^7.0.0
   flutter_bloc: ^7.0.0
   dio: ^5.9.0
+  cupertino_date_textbox: ^1.0.3
+  cupertino_radio_choice: ^1.0.2
 
 dev_dependencies:
   flutter_test:
