@@ -1,29 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:gooabb/core/constants/colorsConstants.dart';
-import 'package:gooabb/view/loginScreen/controller/login_cubit.dart';
+import 'package:gooabb/view/registerScreen/controller/register_cubit.dart';
 
-class LoginPassword extends StatelessWidget {
-  const LoginPassword({super.key});
+class RegisterFirstName extends StatelessWidget {
+  const RegisterFirstName({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final LoginCubit loginCubit = context.read<LoginCubit>();
+    final RegisterCubit registerCubit = context.read<RegisterCubit>();
     return Padding(
       padding: const EdgeInsets.only(left: 20, right: 20),
       child: TextFormField(
-        controller: loginCubit.loginModel.passController,
+        controller: registerCubit.registerModel.firstNameController,
         textAlign: TextAlign.start,
-        obscureText: true,
 
         validator: (value) {
-          if (value == null || value.isEmpty) return "Enter Password";
-          if (value.length < 6) {
-            return "Password Length Should be more than 6 characters";
+          if (value!.isEmpty) {
+            return 'اسمك';
           }
           return null;
         },
-
         decoration: InputDecoration(
           errorBorder: InputBorder.none,
           focusedErrorBorder: InputBorder.none,
@@ -31,12 +27,6 @@ class LoginPassword extends StatelessWidget {
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(19),
             borderSide: BorderSide.none,
-          ),
-          hintText: 'Your Password',
-          hintStyle: TextStyle(
-            color: AppColors.hintText,
-            fontWeight: FontWeight.bold,
-            fontSize: 14,
           ),
 
           filled: true,

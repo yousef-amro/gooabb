@@ -8,7 +8,7 @@ class LoginButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final LoginCubit cubit = context.read<LoginCubit>();
+    final LoginCubit loginCubit = context.read<LoginCubit>();
     return Padding(
       padding: const EdgeInsets.only(left: 20, right: 20),
       child: Container(
@@ -20,7 +20,7 @@ class LoginButton extends StatelessWidget {
           shape: RoundedRectangleBorder(),
           elevation: 0,
           onPressed: () {
-            cubit.login(context);
+            loginCubit.login(context);
           },
           child: SizedBox(
             width: double.infinity,

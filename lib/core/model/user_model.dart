@@ -9,47 +9,28 @@ class UserModel {
     this.nourApiKey,
   });
 
-  /// Gooabb Login
   factory UserModel.fromGooabbLogin(Map<String, dynamic> json) {
     print(json);
-    return UserModel(
-      id: (json['id'] ?? json['user_id'] as num).toInt(),
-      authToken: json['token']?.toString(),
-    );
-  }
 
-  /// Nour Login
-  factory UserModel.fromNourLogin(Map<String, dynamic> json) {
-    return UserModel(
-      id: (json['user_id'] as num).toInt(),
-      nourApiKey: json['api']?.toString(),
-    );
-  }
+    // If backend returned an error payload, don't try to parse it as a user
+    if (json['error'] != null || json['code'] == 'error') {
+      throw Exception(json['error']?.toString() ?? 'Login failed');
+    }
 
-  /// للتخزين (SharedPreferences / SecureStorage)
-  Map<String, dynamic> toJson() => {
-    'id': id,
-    'authToken': authToken,
-    'nourApiKey': nourApiKey,
-  };
+    int? parseInt(dynamic v) {
+      if (v == null) return null;
+      if (v is int) return v;
+      if (v is num) return v.toInt();
+      if (v is String) return int.tryParse(v);
+      return null;
+    }
 
-  factory UserModel.fromJson(Map<String, dynamic> json) {
-    return UserModel(
-      id: (json['id'] as num).toInt(),
-      authToken: json['authToken']?.toString(),
-      nourApiKey: json['nourApiKey']?.toString(),
-    );
-  }
+    final id = parseInt(json['id']) ?? parseInt(json['user_id']);
 
-  UserModel copyWith({
-    int? id,
-    String? authToken,
-    String? nourApiKey,
-  }) {
-    return UserModel(
-      id: id ?? this.id,
-      authToken: authToken ?? this.authToken,
-      nourApiKey: nourApiKey ?? this.nourApiKey,
-    );
+    if (id == null) {
+      throw Exception('Invalid login response: missing id/user_id');
+    }
+
+    return UserModel(id: id, authToken: json['token']?.toString());
   }
 }

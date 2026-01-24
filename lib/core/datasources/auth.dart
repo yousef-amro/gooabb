@@ -12,6 +12,7 @@ class AuthDataSource {
         "email": email,
         "password": password,
         "session_length": "long",
+        'fingerprint': "fingerprint",
       },
     );
     return UserModel.fromGooabbLogin(Map.from(result.data));

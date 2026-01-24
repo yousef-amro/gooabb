@@ -2,18 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gooabb/core/constants/colorsConstants.dart';
 import 'package:gooabb/core/constants/validatesConstants.dart';
-import 'package:gooabb/view/loginScreen/controller/login_cubit.dart';
+import 'package:gooabb/view/registerScreen/controller/register_cubit.dart';
 
-class LoginEmail extends StatelessWidget {
-  const LoginEmail({super.key});
+class RegisterEmail extends StatelessWidget {
+  const RegisterEmail({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final LoginCubit loginCubit = context.read<LoginCubit>();
+    final RegisterCubit registerCubit = context.read<RegisterCubit>();
     return Padding(
       padding: const EdgeInsets.only(left: 20, right: 20),
       child: TextFormField(
-        controller: loginCubit.loginModel.emailController,
+        controller: registerCubit.registerModel.emailController,
         textAlign: TextAlign.start,
 
         validator: (value) {
