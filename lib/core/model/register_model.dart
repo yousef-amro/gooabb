@@ -13,7 +13,9 @@ class RegisterModel {
   final TextEditingController passController = TextEditingController(
     text: kDebugMode ? "yousef123456" : "",
   );
-
+  late int day;
+  late int month;
+  late int year;
   RegisterModel();
 
   bool get isValid {

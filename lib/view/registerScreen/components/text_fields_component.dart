@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gooabb/core/constants/colors_constants.dart';
 import 'package:gooabb/view/loginScreen/view.dart';
+import 'package:gooabb/view/registerScreen/controller/register_cubit.dart';
 import 'package:gooabb/view/registerScreen/widgets/age.dart';
 import 'package:gooabb/view/registerScreen/widgets/first_name.dart';
 import 'package:gooabb/view/registerScreen/widgets/register_button.dart';
@@ -20,6 +22,7 @@ class _RegisterTextFieldsComponentState
     extends State<RegisterTextFieldsComponent> {
   @override
   Widget build(BuildContext context) {
+    final RegisterCubit registerCubit = context.read<RegisterCubit>();
     return Padding(
       padding: const EdgeInsets.all(20.0),
       child: Stack(
@@ -107,8 +110,9 @@ class _RegisterTextFieldsComponentState
                 minYear: 1950,
                 maxYear: DateTime.now().year,
                 onChanged: (date) {
-                  // Save date
-                  print(date);
+                  registerCubit.registerModel.day = date.day;
+                  registerCubit.registerModel.month = date.month;
+                  registerCubit.registerModel.year = date.year;
                 },
               ),
 

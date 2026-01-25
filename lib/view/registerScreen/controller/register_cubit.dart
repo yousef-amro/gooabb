@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
-import 'package:gooabb/core/datasources/auth.dart';
+
 import 'package:gooabb/core/model/register_model.dart';
 import 'package:gooabb/view/registerScreen/controller/register_state.dart';
 

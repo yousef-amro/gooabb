@@ -32,7 +32,7 @@ class RegisterButton extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                   fontSize: 20,
                 ),
-                "تسجيل دخول",
+                "تسجيل حساب جديد",
               ),
             ),
           ),
